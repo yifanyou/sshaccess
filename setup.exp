@@ -21,11 +21,13 @@ expect {
 expect eof
 
 set timeout 1
-spawn scp /home/$username/.ssh/id_rsa.pub  $username@$ip:/home/$username/.ssh
-expect {
-  "password" {
-    send "$password\r"
-  }
-}
+spawn scp /home/$username/.ssh/id_rsa.pub  $username@$ip:/home/baoadmin/.ssh/from_id_rsa.pub
+expect "password" { send "$password\r" }
+
+expect eof
+
+set timeout 1
+spawn ssh $username@$ip cat .ssh/from_id_rsa.pub >> .ssh/authorized_keys
+expect "password" { send "$password\r" }
 
 expect eof

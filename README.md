@@ -4,6 +4,7 @@ Used to set up server access other servers without password.
 
 #### First
 put servers info into a file, like ssh-servers-config.txt.
+
 the info format: `xxx.xxx.xxx.xxx username password.`
 
 #### Second

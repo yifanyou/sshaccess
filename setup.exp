@@ -1,0 +1,31 @@
+#!/usr/bin/expect
+
+set ip [lindex $argv 0]
+set username [lindex $argv 1]
+set password [lindex $argv 2]
+
+puts "ip:$ip user:$username passwd:$password"
+
+set timeout 1
+spawn ssh $username@$ip mkdir -p .ssh
+expect {
+  "yes/no" {
+    send "yes\r"
+    exp_continue
+  }
+  "password" {
+    send "$password\r"
+  }
+}
+
+expect eof
+
+set timeout 1
+spawn scp /home/$username/.ssh/id_rsa.pub  $username@$ip:/home/baoadmin/.ssh
+expect {
+  "password" {
+    send "$password\r"
+  }
+}
+
+expect eof

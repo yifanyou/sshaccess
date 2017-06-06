@@ -21,7 +21,7 @@ expect {
 expect eof
 
 set timeout 1
-spawn scp /home/$username/.ssh/id_rsa.pub  $username@$ip:/home/baoadmin/.ssh
+spawn scp /home/$username/.ssh/id_rsa.pub  $username@$ip:/home/$username/.ssh
 expect {
   "password" {
     send "$password\r"

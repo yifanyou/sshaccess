@@ -1,6 +1,6 @@
 ### SSHACCESS
 
-Used to set up server access other servers without password.
+Used to set up server ssh access other servers without password.
 
 #### First
 put servers info into a file, like ssh-servers-config.txt.

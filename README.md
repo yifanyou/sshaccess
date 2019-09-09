@@ -1,19 +1,21 @@
 ### SSHACCESS
 
-Used to set up server ssh access other servers without password.
+Used to set up server ssh access other servers without auth.
 
 #### First
-put servers info into a file, like ssh-servers-config.txt.
+write server info list into a file, like ssh-servers-config.txt.
 
 the info format: `xxx.xxx.xxx.xxx username password.`
 
+you can write  multi lines.
+
 #### Second
-run the sh named run.sh
+exec the shell file named run.sh
 `./run.sh servers-info-file`
 
 ex: `./run.sh ssh-servers-config.txt`
 
 ##### Last
-Have a rest. It will help you to do the work perfectly.
+Have a rest. It will help you to do the job.
 
 And you can optimize the script freely if you want 

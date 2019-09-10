@@ -1,6 +1,6 @@
 ### SSHACCESS
 
-Used to set up server ssh access other servers without auth.
+Used to set up server ssh access other servers without auth batchly.
 
 #### First
 write server info list into a file, like ssh-servers-config.txt.
